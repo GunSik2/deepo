@@ -3,10 +3,10 @@
 # ------------------------------------------------------------------
 # python        3.6    (apt)
 # tensorflow    latest (pip)
-# keras         latest (pip)
+# sonnet        latest (pip)
 # ==================================================================
 
-FROM ubuntu:18.04
+FROM nvidia/cuda:11.0-cudnn8-devel-ubuntu18.04
 ENV LANG C.UTF-8
 RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     PIP_INSTALL="python -m pip --no-cache-dir install --upgrade" && \
@@ -79,16 +79,16 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 # ------------------------------------------------------------------
 
     $PIP_INSTALL \
-        tensorflow \
+        tensorflow-gpu \
         && \
 
 # ==================================================================
-# keras
+# sonnet
 # ------------------------------------------------------------------
 
     $PIP_INSTALL \
-        'h5py<3.0.0' \
-        keras \
+        tensorflow_probability \
+        "dm-sonnet>=2.0.0b0" --pre \
         && \
 
 # ==================================================================

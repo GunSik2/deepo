@@ -11,7 +11,7 @@ class Keras(Module):
     def build(self):
         return r'''
             $PIP_INSTALL \
-                h5py \
+                'h5py<3.0.0' \
                 keras \
                 && \
         '''

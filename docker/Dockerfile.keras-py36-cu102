@@ -87,7 +87,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 # ------------------------------------------------------------------
 
     $PIP_INSTALL \
-        h5py \
+        'h5py<3.0.0' \
         keras \
         && \
 

@@ -2,11 +2,10 @@
 # module list
 # ------------------------------------------------------------------
 # python        3.6    (apt)
-# tensorflow    latest (pip)
-# keras         latest (pip)
+# mxnet         latest (pip)
 # ==================================================================
 
-FROM ubuntu:18.04
+FROM nvidia/cuda:11.0-cudnn8-devel-ubuntu18.04
 ENV LANG C.UTF-8
 RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     PIP_INSTALL="python -m pip --no-cache-dir install --upgrade" && \
@@ -75,20 +74,17 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         && \
 
 # ==================================================================
-# tensorflow
+# mxnet
 # ------------------------------------------------------------------
 
-    $PIP_INSTALL \
-        tensorflow \
+    DEBIAN_FRONTEND=noninteractive $APT_INSTALL \
+        libatlas-base-dev \
+        graphviz \
         && \
 
-# ==================================================================
-# keras
-# ------------------------------------------------------------------
-
     $PIP_INSTALL \
-        'h5py<3.0.0' \
-        keras \
+        mxnet-cu110 \
+        graphviz \
         && \
 
 # ==================================================================
@@ -99,5 +95,3 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     apt-get clean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/* /tmp/* ~/*
-
-EXPOSE 6006
