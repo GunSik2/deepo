@@ -26,3 +26,17 @@ python ../generator/generate.py ../docker/Dockerfile.torch-cu102 torch --cuda-ve
 python ../generator/generate.py ../docker/Dockerfile.darknet-cu102 darknet --cuda-ver 10.2 --cudnn-ver 7
 python ../generator/generate.py ../docker/Dockerfile.paddle-py36-cu102 paddle python==3.6 --cuda-ver 10.2 --cudnn-ver 7
 python ../generator/generate.py ../docker/Dockerfile.all-py36-cu102 tensorflow sonnet mxnet cntk keras pytorch chainer theano lasagne caffe torch darknet paddle python==3.6 onnx jupyterlab --cuda-ver 10.2 --cudnn-ver 7
+python ../generator/generate.py ../docker/Dockerfile.tensorflow-py36-cu110 tensorflow python==3.6 --cuda-ver 11.0 --cudnn-ver 8
+python ../generator/generate.py ../docker/Dockerfile.sonnet-py36-cu110 sonnet python==3.6 --cuda-ver 11.0 --cudnn-ver 8
+python ../generator/generate.py ../docker/Dockerfile.mxnet-py36-cu110 mxnet python==3.6 --cuda-ver 11.0 --cudnn-ver 8
+python ../generator/generate.py ../docker/Dockerfile.cntk-py36-cu110 cntk python==3.6 --cuda-ver 11.0 --cudnn-ver 8
+python ../generator/generate.py ../docker/Dockerfile.keras-py36-cu110 keras python==3.6 --cuda-ver 11.0 --cudnn-ver 8
+python ../generator/generate.py ../docker/Dockerfile.pytorch-py36-cu110 pytorch python==3.6 --cuda-ver 11.0 --cudnn-ver 8
+python ../generator/generate.py ../docker/Dockerfile.chainer-py36-cu110 chainer python==3.6 --cuda-ver 11.0 --cudnn-ver 8
+python ../generator/generate.py ../docker/Dockerfile.theano-py36-cu110 theano python==3.6 --cuda-ver 11.0 --cudnn-ver 8
+python ../generator/generate.py ../docker/Dockerfile.lasagne-py36-cu110 lasagne python==3.6 --cuda-ver 11.0 --cudnn-ver 8
+python ../generator/generate.py ../docker/Dockerfile.caffe-py36-cu110 caffe python==3.6 --cuda-ver 11.0 --cudnn-ver 8
+python ../generator/generate.py ../docker/Dockerfile.torch-cu110 torch --cuda-ver 11.0 --cudnn-ver 8
+python ../generator/generate.py ../docker/Dockerfile.darknet-cu110 darknet --cuda-ver 11.0 --cudnn-ver 8
+python ../generator/generate.py ../docker/Dockerfile.paddle-py36-cu110 paddle python==3.6 --cuda-ver 11.0 --cudnn-ver 8
+python ../generator/generate.py ../docker/Dockerfile.all-py36-cu110 tensorflow sonnet mxnet cntk keras pytorch chainer theano lasagne caffe torch darknet paddle python==3.6 onnx jupyterlab --cuda-ver 11.0 --cudnn-ver 8
